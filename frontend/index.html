@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <title>cinema para todos</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"> </script>
+  <link rel="stylesheet" href="style.css">
+  <title>UX Cine</title>
+</head>
+
+<body>
+
+
+
+  <header>
+    <div class="logo">UXCine <img src="assets/img/logo2.png" alt=""> </div>
+
+    <div class="hamburguer">
+      <i class="fa fa-bars fa-2xl" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+
+    </div>
+
+
+    <nav class="nav-bar">
+      <ul>
+        <li data-bs-toggle="modal" data-bs-target="#staticBackdrop"><a href="#"><i id="nav-icon"
+              class="fa fa-child fa-lg"></i>Dependente</a></li>
+        <li data-bs-target="#indicarModal" data-bs-toggle="modal"><a href="#"><i id="nav-icon"
+              class="fa fa-star fa-lg"></i>Indicar</a></li>
+        <li data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><a href="#"><i
+              class="fa fa-user-circle"></i></a></li>
+      </ul>
+    </nav>
+
+
+
+
+  </header>
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-center">cadastro de dependentes</h1>
+          <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3">
+            <div class="col-md-6">
+              <label for="validationDefault01" class="form-label">Parentesco</label>
+              <select type="text" class="form-control" id="senha-child" required>
+                <option disabled selected value="">Grau</option>
+                <option>Filho(a)</option>
+                <option>Neto(a)</option>
+                <option>sobrinho(a)</option>
+                <option>primo(a)</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="validationDefaultUsername" class="form-label">Nascimento</label>
+              <div class="input-group">
+                <input type="date" class="form-control" id="data-child" aria-describedby="inputGroupPrepend2" required>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <label for="validationDefault05" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="nome-child" required>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                  Concordo com os Termos e condições..
+                </label>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Registrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+        </div>
+        <div class="modal-body">
+          <nav class="nav-bar-responsive">
+            <ul>
+              <li><a href="#"><i id="nav-icon" class="fa fa-child fa-lg"></i>Dependente</a></li>
+              <li><a href="#"><i id="nav-icon" class="fa fa-star fa-lg"></i>Indicar</a></li>
+              <li><a href="#"><i class="fa fa-user-circle"></i>Conta</a></li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+        </div>
+        <div class="modal-body">
+          <form class="p-5">
+            <h2 class="mb-4 text-bold">Entre na sua conta</h2>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text ">Não vamos compartilhar suas informações com ninguem</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">CPF</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Me mantenha conectado</label>
+            </div>
+            <div>
+              <button type="submit" class="text-bold btn btn-primary"><a style="color: white;" href="reserva.html">Entrar</a></button>
+              <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="btn btn-primary">crie uma
+                conta</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL INDICAR -->
+
+
+  <div class="modal fade" id="indicarModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+        </div>
+        <div class="modal-body">
+          <form class="p-5">
+            <h2 class="mb-4 text-bold">Indicar um Filme</h2>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div>
+              <button type="submit" class="text-bold btn btn-primary">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-dialog modal-xl">...</div>
+
+  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Crie Sua conta</h2>
+          <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3">
+            <div class="col-md-6">
+              <label for="validationDefault01" class="form-label">CPF</label>
+              <input type="number" class="form-control" id="cpf" required>
+            </div>
+            <div class="col-md-6">
+              <label for="validationDefaultUsername" class="form-label">Nascimento</label>
+              <div class="input-group">
+                <input type="date" class="form-control" id="data" aria-describedby="inputGroupPrepend2" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationDefault03" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
+            </div>
+
+            <div class="col-md-6">
+              <label for="validationDefault05" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="senha" required>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                  Concordo com os Termos e condições..
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <a href="reserva.html" class="btn btn-primary" type="submit">Registrar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="conteudo">
+    <h1>Cinema para Todos </h1>
+    <div class="cards">
+      <div class="wrap">
+
+
+        <div class="box">
+          <div class="box-top">
+            <img class="box-image"
+              src="https://upload.wikimedia.org/wikipedia/pt/thumb/2/2a/TropaDeElitePoster.jpg/255px-TropaDeElitePoster.jpg"
+              alt="Tropa de elite">
+            <div class="title-flex">
+              <h3 class="box-title">Tropa de Elite</h3>
+              <p class="user-follow-info">Classificação <img src="assets/img/18.png" style="width: 15%;" alt=""></p>
+            </div>
+            <p class="description"></p>
+          </div>
+          <div class="cards-btns">
+            <a href="#" class="button">Detalhes</a>
+            <a href="reserva.html" id="tropa" class="button button-filme">Assistir</a>
+          </div>
+
+        </div>
+
+
+
+        <div class="box">
+          <div class="box-top">
+            <img class="box-image" src="https://br.web.img3.acsta.net/pictures/19/12/12/22/35/3598465.jpg"
+              alt="Minha mãe é uma peça">
+            <div class="title-flex">
+              <h3 class="box-title">Minha mãe é uma peça 3</h3>
+              <p class="user-follow-info">Classificação <img src="assets/img/livre.png" style="width: 15%;" alt=""></p>
+
+            </div>
+            <p class="description"></p>
+          </div>
+          <div class="cards-btns">
+            <a href="#" class="button">Detalhes</a>
+            <a href="reserva.html" id="peça" class="button button-filme">Assistir</a>
+
+          </div>
+        </div>
+
+
+
+        <div class="box">
+          <div class="box-top">
+            <img class="box-image"
+              src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/ecde21107871061.5fb1568aa2f0f.jpg"
+              alt="Auto da compadecida">
+            <div class="title-flex">
+              <h3 class="box-title">Auto da compadecida</h3>
+              <p class="user-follow-info">Classificação <img src="assets/img/14.png" style="width: 15%;" alt=""></p>
+            </div>
+            <p class="description"></p>
+          </div>
+          <div class="cards-btns">
+            <a href="#" class="button">Detalhes</a>
+            <a href="reserva.html" id="compadecida" class="button button-filme">Assistir</a>
+          </div>
+
+        </div>
+      </div>
+
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 INTERDISCIPLINAR grupo2</p>
+    </div>
+  </footer>
+</body>
+
+</html>

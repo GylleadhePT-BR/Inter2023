@@ -1,0 +1,42 @@
+Vocês vão preencher a variável novoUsuario com o que o usuário preencher:
+Só preenchi como exemplo mesmo:
+const novoUsuario = {
+  nome: 'Fulano de Tal',
+  cpf: '12345678900',
+  email: 'fulano@gmail.com',
+  data_nascimento: '1990-01-01',
+  senha: '123456',
+  genero: 'M'
+};
+
+
+
+Aqui faz a requisição POST para a API com os dados do novo usuário:
+
+axios.post('http://localhost:3000/usuarios', novoUsuario)
+  .then(response => {
+    console.log('Usuário cadastrado com sucesso!', response.data);
+  })
+  .catch(error => {
+    console.error('Erro ao cadastrar usuário:', error.response.data.message);
+  });
+
+
+
+E a parte de login:
+
+Mesmo esquema que eu falei, pegar o que o usuário preencheu e armazenar na variavel:
+
+const dadosLogin = {
+  email: 'fulano@gmail.com',
+  senha: '123456'
+};
+
+Aqui faz a requisição POST para a API com os dados de login:
+axios.post('http://localhost:3000/login', dadosLogin)
+  .then(response => {
+    console.log('Login efetuado com sucesso!', response.data);
+  })
+  .catch(error => {
+    console.error('Erro ao efetuar login:', error.response.data.message);
+  });

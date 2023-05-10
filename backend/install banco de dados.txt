@@ -1,0 +1,82 @@
+CREATE DATABASE cinema;
+
+USE cinema;
+
+CREATE TABLE `reservas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome_cliente` varchar(255) NOT NULL,
+  `codigo_compra` varchar(255) NOT NULL,
+  `num_cadeira` int(11) NOT NULL,
+  `sessao` int(11) NOT NULL,
+  `nome_filme` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE DATABASE usuario;
+
+USE usuario;
+
+CREATE TABLE `usuario` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(255) NOT NULL,
+  `cpf` VARCHAR(11) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `data_nascimento` DATE NOT NULL,
+  `senha` VARCHAR(255) NOT NULL,
+  `genero` ENUM('Masculino', 'Feminino', 'Outro') NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cpf_UNIQUE` (`cpf`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+ALTER TABLE usuario.usuarios ADD COLUMN createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+ALTER TABLE usuario.usuarios ADD COLUMN updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+
+node.js:
+
+npm install express body-parser sequelize mysql2
+npm install -g sequelize-cli
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+sequelize --version
+npx sequelize-cli db:migrate
+npm install uuid
+
+
+
+index.js:
+Coloque a senha no campo senha, sem apagar as '':
+
+const sequelize = new Sequelize('cinema', 'root', 'senha', {
+  host: 'localhost',
+  dialect: 'mysql'
+});
+
+
+E coloque a senha no config.json também.
+
+{
+  "development": {
+    "username": "root",
+    "password": "Sua senha aqui do banco de dados",
+    "database": "cinema",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "Sua senha aqui do banco de dados",
+    "database": "usuario",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "Sua senha aqui do banco de dados",
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
