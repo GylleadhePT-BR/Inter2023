@@ -88,7 +88,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Registrar</button>
+          <a href="reserva.html" type="button" class="btn btn-primary">Registrar</a>
         </div>
       </div>
     </div>
@@ -126,12 +126,12 @@
           <form class="p-5">
             <h2 class="mb-4 text-bold">Entre na sua conta</h2>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="exampleInputEmail1" class="form-label">CPF</label>
+              <input type="number" class="form-control" id="exampleInputCPF" aria-describedby="emailHelp">
               <div id="emailHelp" class="form-text ">Não vamos compartilhar suas informações com ninguem</div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">CPF</label>
+              <label for="exampleInputPassword1" class="form-label">Senha</label>
               <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
             <div class="mb-3 form-check">
@@ -212,7 +212,7 @@
               </div>
             </div>
             <div class="col-12">
-              <a href="reserva.html" class="btn btn-primary" type="submit">Registrar</a>
+              <button href="reserva.html" onclick="verificar()" class="btn btn-primary" type="submit" id="reg">Registrar</button>
             </div>
           </form>
         </div>
@@ -238,7 +238,9 @@
             <p class="description"></p>
           </div>
           <div class="cards-btns">
-            <a href="#" class="button">Detalhes</a>
+            <a href="https://pt.wikipedia.org/wiki/Tropa_de_Elite_(filme)" class="button">Detalhes</a>
+
+
             <a href="reserva.html" id="tropa" class="button button-filme">Assistir</a>
           </div>
 
@@ -258,7 +260,7 @@
             <p class="description"></p>
           </div>
           <div class="cards-btns">
-            <a href="#" class="button">Detalhes</a>
+            <a href="https://pt.wikipedia.org/wiki/Minha_M%C3%A3e_%C3%89_uma_Pe%C3%A7a_3" class="button">Detalhes</a>
             <a href="reserva.html" id="peça" class="button button-filme">Assistir</a>
 
           </div>
@@ -278,7 +280,7 @@
             <p class="description"></p>
           </div>
           <div class="cards-btns">
-            <a href="#" class="button">Detalhes</a>
+            <a href="https://pt.wikipedia.org/wiki/O_Auto_da_Compadecida_(filme)" class="button">Detalhes</a>
             <a href="reserva.html" id="compadecida" class="button button-filme">Assistir</a>
           </div>
 

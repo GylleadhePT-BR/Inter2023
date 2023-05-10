@@ -5,7 +5,9 @@ console.log(buttons)
 
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
+
 
   const buttons = document.getElementsByClassName('col');
   let buttonText = '';
@@ -29,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Variável botaoSelecionado:', botaoSelecionado);
 
       document.querySelector('.cadeira-escolhida').textContent = buttonText
+
+
+
     });
   });
 
